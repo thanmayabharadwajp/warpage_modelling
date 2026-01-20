@@ -1,10 +1,14 @@
+# Python
 __pycache__/
 *.pyc
-.env
-data/raw/
-data/processed/
-experiments/*/checkpoints/
-experiments/*/logs/
-runs/
+.venv/
+venv/
+
+# Data
+data/mnist/
+
+# Outputs
 outputs/
-.ipynb_checkpoints/
+
+# OS
+.DS_Store
