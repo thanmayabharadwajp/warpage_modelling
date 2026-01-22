@@ -6,13 +6,13 @@ from torch.utils.data import DataLoader
 from torchvision import datasets, transforms
 from tqdm import tqdm
 
-from models.generator import Generator
-from models.discriminator import Discriminator
-from utils import save_samples, weights_init
+from src.models.generator import Generator
+from src.models.discriminator import Discriminator
+from src.utils import save_samples, weights_init
 
 batch_size = 128
 epochs = 50
-learning_rate = 0.002
+learning_rate = 0.0002
 noise_dim = 100
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -20,7 +20,7 @@ print(f"Using device: {device}")
 
 transform = transforms.Compose([
     transforms.ToTensor(),
-    transforms.Normalize((0.5,)(0.5,))
+    transforms.Normalize((0.5,),(0.5,))
 ])
 
 dataset = datasets.MNIST(

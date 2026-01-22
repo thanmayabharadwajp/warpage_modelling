@@ -1,11 +1,11 @@
 # utils
 
 import torch
-import torchvision.utils import save_image
+from torchvision.utils import save_image
 import os
 
 def save_samples(generator, epoch, noise_dim, device):
-    z = torch.random(64, noise_dim).to(device)
+    z = torch.randn(64, noise_dim).to(device)
     fake_images = generator(z)
     os.makedirs("outputs/images", exist_ok = True)
     save_image(fake_images, f"outputs/images/epoch_{epoch}.png", normalize = True)
